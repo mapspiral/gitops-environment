@@ -9,7 +9,12 @@ spec:
       app: example-application
     spec:
       containers:
-      - name: example-application
-        image: <image-name>:<tag>
+      - image: <image-name>:<tag>
+        name: example-application
         ports:
         - containerPort: 8080
+  template:
+    spec:
+      containers:
+      - image: mapspiral/gitops-application:v1
+        name: gitops-application
