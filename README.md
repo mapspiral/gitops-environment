@@ -16,3 +16,13 @@ flux create source git gitops-demo \
   --interval=30s \
   --export > ./clusters/my-cluster/gitops-demo.yaml
 ```
+
+```bash
+flux create kustomization gitops-demo \
+  --target-namespace=default \
+  --source=gitops-demo \
+  --path="./kustomize" \
+  --prune=true \
+  --interval=5m \
+  --export > ./clusters/my-cluster/gitops-kustomization.yaml
+```
