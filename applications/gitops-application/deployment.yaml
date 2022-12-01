@@ -13,7 +13,7 @@ spec:
         app: gitops-application
     spec:
       containers:
-      - image: <image-name>:<tag>
+      - image: mapspiral/gitops-application:v1
         name: gitops-application
         ports:
         - containerPort: 8080
